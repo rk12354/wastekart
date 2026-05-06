@@ -4,7 +4,7 @@ import axios from 'axios'
 const AuthContext = createContext(null)
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api',
+  baseURL: import.meta.env.VITE_BACKEND_URL || '/api',
 })
 
 // Attach JWT to every request
