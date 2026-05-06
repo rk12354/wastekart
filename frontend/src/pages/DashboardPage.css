@@ -1,0 +1,115 @@
+.dashboard-page { padding: 36px 0 60px; }
+
+.dash-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 28px; flex-wrap: wrap; gap: 12px;
+}
+.dash-header h1 { font-size: clamp(22px, 3vw, 30px); }
+.dash-header p   { color: var(--text-secondary); font-size: 15px; margin-top: 4px; }
+
+/* Stat cards */
+.stat-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  margin-bottom: 20px;
+}
+.stat-card {
+  border-radius: var(--radius-lg); padding: 20px;
+  display: flex; gap: 16px; align-items: center;
+  border: 1px solid var(--border);
+  transition: transform .2s, box-shadow .2s;
+}
+.stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.stat-card-green  { background: var(--green-50);  border-color: var(--green-200); }
+.stat-card-lime   { background: #f7fee7;           border-color: #bbf7d0; }
+.stat-card-amber  { background: var(--amber-100);  border-color: #fde68a; }
+.stat-card-blue   { background: var(--blue-100);   border-color: #bfdbfe; }
+.sc-icon { font-size: 30px; flex-shrink: 0; }
+.sc-value { font-family: var(--font-display); font-size: 22px; font-weight: 800; }
+.sc-label { font-size: 12.5px; color: var(--text-secondary); margin-top: 1px; font-weight: 500; }
+.sc-sub   { font-size: 11px; color: var(--text-muted); }
+
+/* Status row */
+.status-row {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+  margin-bottom: 24px;
+}
+.status-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 16px;
+  text-align: center; display: flex; flex-direction: column; gap: 4px;
+}
+.status-card-icon  { font-size: 20px; }
+.status-card-val   { font-family: var(--font-display); font-size: 26px; font-weight: 800; color: var(--primary); }
+.status-card-label { font-size: 12px; color: var(--text-muted); font-weight: 500; }
+
+/* Charts grid */
+.charts-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  margin-bottom: 24px;
+}
+.chart-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 16px;
+}
+.chart-header h3 { font-size: 15px; }
+
+/* Top collectors */
+.collector-list { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
+.collector-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 12px;
+  background: var(--gray-50); border-radius: var(--radius-md);
+}
+.cr-rank  { font-size: 18px; }
+.cr-info  { flex: 1; }
+.cr-name  { display: block; font-size: 13.5px; font-weight: 600; }
+.cr-sub   { font-size: 12px; color: var(--text-muted); }
+.cr-amount { font-family: var(--font-display); font-weight: 700; color: var(--green-600); font-size: 15px; }
+
+/* Bookings table */
+.recent-section { margin-bottom: 20px; }
+.bookings-table { width: 100%; overflow-x: auto; }
+.bt-head, .bt-row {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 0.8fr 0.8fr 1fr 1fr;
+  gap: 8px; padding: 10px 0;
+  font-size: 13px;
+}
+.bt-head {
+  font-weight: 600; color: var(--text-muted); font-size: 11.5px;
+  text-transform: uppercase; letter-spacing: .4px;
+  border-bottom: 1px solid var(--border); margin-bottom: 4px;
+}
+.bt-row { border-bottom: 1px solid var(--gray-100); align-items: center; }
+.bt-row:last-child { border-bottom: none; }
+.bt-id    { font-family: monospace; font-size: 12px; color: var(--primary); }
+.bt-amount { font-weight: 700; color: var(--green-600); }
+
+/* Eco milestone */
+.eco-milestone {
+  display: flex; align-items: center; gap: 20px;
+  padding: 24px;
+  background: linear-gradient(135deg, var(--green-50), #f0fdf4);
+  border-color: var(--green-200);
+}
+.em-icon { font-size: 40px; flex-shrink: 0; }
+.em-body { flex: 1; }
+.em-body h3 { font-size: 16px; margin-bottom: 6px; }
+.em-body p  { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+.em-tree-count {
+  font-family: var(--font-display); font-size: 18px; font-weight: 800;
+  color: var(--green-600); white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .stat-grid   { grid-template-columns: repeat(2, 1fr); }
+  .status-row  { grid-template-columns: repeat(2, 1fr); }
+  .charts-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .stat-grid   { grid-template-columns: 1fr; }
+  .status-row  { grid-template-columns: repeat(2, 1fr); }
+  .bt-head, .bt-row { grid-template-columns: 1fr 1fr; }
+  .bt-head span:nth-child(n+3), .bt-row span:nth-child(n+3) { display: none; }
+  .eco-milestone { flex-direction: column; text-align: center; }
+}

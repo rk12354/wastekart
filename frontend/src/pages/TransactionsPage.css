@@ -1,0 +1,54 @@
+.txn-page { padding: 36px 0 60px; }
+.txn-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 24px; flex-wrap: wrap; gap: 12px;
+}
+.txn-header h1 { font-size: clamp(22px, 3vw, 28px); margin-bottom: 4px; }
+.txn-header p  { color: var(--text-secondary); }
+
+.txn-total-badge {
+  background: var(--green-600); color: white;
+  border-radius: var(--radius-lg); padding: 12px 20px;
+  text-align: center;
+}
+.txn-total-badge span  { font-size: 11px; opacity: .8; display: block; }
+.txn-total-badge strong { font-family: var(--font-display); font-size: 22px; }
+
+.txn-summary-row {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px;
+}
+.txn-sum-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 16px;
+  display: flex; align-items: center; gap: 12px;
+}
+.txn-sum-card span { font-size: 26px; }
+.txn-sum-card strong { display: block; font-family: var(--font-display); font-size: 18px; font-weight: 800; }
+.txn-sum-card p      { font-size: 12px; color: var(--text-muted); }
+
+.txn-table-wrap { overflow-x: auto; }
+.txn-table { width: 100%; border-collapse: collapse; }
+.txn-table thead tr { background: var(--gray-50); border-bottom: 2px solid var(--border); }
+.txn-table th {
+  padding: 11px 16px; text-align: left;
+  font-size: 11.5px; font-weight: 700; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: .5px; white-space: nowrap;
+}
+.txn-table td { padding: 12px 16px; font-size: 13.5px; border-bottom: 1px solid var(--gray-100); vertical-align: middle; }
+.txn-table tbody tr:last-child td { border-bottom: none; }
+.txn-table tbody tr:hover { background: var(--gray-50); }
+
+.txn-id      { font-family: monospace; font-size: 12px; color: var(--primary); }
+.txn-booking { font-family: monospace; font-size: 12px; }
+.txn-link    { color: var(--primary); font-weight: 600; }
+.txn-amount  { font-family: var(--font-display); font-weight: 800; font-size: 15px; color: var(--green-600); }
+
+.pagination { display: flex; align-items: center; gap: 12px; justify-content: center; }
+
+@media (max-width: 768px) {
+  .txn-summary-row { grid-template-columns: repeat(2, 1fr); }
+  .txn-table th:nth-child(3),
+  .txn-table td:nth-child(3),
+  .txn-table th:nth-child(5),
+  .txn-table td:nth-child(5) { display: none; }
+}

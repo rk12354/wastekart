@@ -1,0 +1,52 @@
+.collectors-page { padding: 36px 0 60px; }
+.coll-hero { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+.coll-hero h1 { font-size: clamp(22px,3vw,28px); margin-bottom: 6px; }
+.coll-hero p  { color: var(--text-secondary); }
+.coll-filters { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+
+.collectors-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
+.collector-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 20px;
+  display: flex; flex-direction: column; gap: 10px;
+  transition: transform .2s, box-shadow .2s;
+}
+.collector-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+.cc-head { display: flex; align-items: flex-start; gap: 12px; }
+.cc-avatar {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: var(--green-600); color: white; font-size: 20px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  font-family: var(--font-display);
+}
+.cc-info { flex: 1; }
+.cc-name  { font-weight: 700; font-size: 15px; }
+.cc-owner { font-size: 12px; color: var(--text-muted); }
+.cc-rating { font-size: 12.5px; display: flex; align-items: center; gap: 3px; margin-top: 3px; }
+.cc-rating span:nth-child(2) { font-weight: 700; color: var(--amber-500); }
+.cc-pickups { color: var(--text-muted); }
+.cc-avail {
+  font-size: 11.5px; font-weight: 600; padding: 3px 10px;
+  border-radius: var(--radius-full); white-space: nowrap;
+}
+.cc-avail.available   { background: var(--green-100); color: var(--green-700); }
+.cc-avail.unavailable { background: var(--red-100); color: #991b1b; }
+
+.cc-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+.cc-vehicles { display: flex; gap: 6px; flex-wrap: wrap; }
+.veh-badge { font-size: 11.5px; padding: 3px 8px; background: var(--gray-100); border-radius: var(--radius-full); color: var(--text-secondary); }
+
+.cc-pincodes { font-size: 12px; color: var(--text-muted); }
+
+.cc-materials { background: var(--gray-50); border-radius: var(--radius-md); padding: 10px; }
+.cc-mat-row { display: flex; justify-content: space-between; font-size: 12.5px; padding: 4px 0; border-bottom: 1px solid var(--gray-100); }
+.cc-mat-row:last-child { border: none; }
+.cc-mat-price { font-weight: 700; color: var(--green-600); }
+
+.cc-hours { font-size: 12.5px; color: var(--text-muted); }
+
+@media (max-width: 600px) {
+  .collectors-grid { grid-template-columns: 1fr; }
+}

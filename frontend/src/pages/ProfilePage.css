@@ -1,0 +1,56 @@
+.profile-page { padding: 36px 0 60px; }
+.profile-title { font-size: clamp(22px,3vw,28px); margin-bottom: 24px; }
+
+.profile-layout {
+  display: grid; grid-template-columns: 280px 1fr; gap: 24px; align-items: start;
+}
+.profile-sidebar { display: flex; flex-direction: column; gap: 16px; }
+
+.profile-card { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.profile-avatar {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--green-600); color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 26px; font-weight: 800;
+  margin-bottom: 4px;
+}
+.profile-name  { font-weight: 700; font-size: 17px; }
+.profile-email { font-size: 13px; color: var(--text-muted); }
+.profile-since { font-size: 12px; color: var(--text-muted); background: var(--gray-100); padding: 3px 10px; border-radius: var(--radius-full); }
+
+.eco-profile-card h4 { font-size: 13.5px; margin-bottom: 14px; }
+.eco-stat-item { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.eco-stat-item span  { font-size: 22px; }
+.eco-stat-item strong{ display: block; font-weight: 700; font-size: 15px; color: var(--primary); }
+.eco-stat-item p     { font-size: 11.5px; color: var(--text-muted); }
+
+.profile-main { display: flex; flex-direction: column; gap: 0; }
+.profile-tabs { display: flex; gap: 0; margin-bottom: -1px; z-index: 1; position: relative; }
+.ptab {
+  padding: 10px 20px; font-size: 13.5px; font-weight: 600; cursor: pointer;
+  background: var(--gray-100); color: var(--text-secondary);
+  border: 1px solid var(--border); border-bottom: none; border-radius: var(--radius-md) var(--radius-md) 0 0;
+  margin-right: 4px; transition: background .15s, color .15s;
+}
+.ptab:hover  { background: var(--green-50); color: var(--primary); }
+.ptab.active { background: var(--surface); color: var(--primary); border-bottom-color: var(--surface); }
+
+.profile-form-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+.password-hint {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12.5px; color: var(--text-muted);
+  background: var(--blue-100); padding: 10px 14px; border-radius: var(--radius-md);
+  margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+  .profile-layout { grid-template-columns: 1fr; }
+  .profile-sidebar { flex-direction: row; flex-wrap: wrap; }
+  .profile-card, .eco-profile-card { flex: 1; min-width: 240px; }
+}
+@media (max-width: 600px) {
+  .profile-form-grid { grid-template-columns: 1fr; }
+  .profile-card, .eco-profile-card { min-width: 100%; }
+}
