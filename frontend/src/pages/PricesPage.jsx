@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext'
 import axios from 'axios'
 import './PricesPage.css'
 
-const API_URL = import.meta.env.VITE_API_URL || '/api'
+const API_URL = import.meta.env.VITE_BACKEND_URL || '/api'
 const CATEGORIES = ['all','paper','metal','plastic','glass','ewaste','rubber']
 
 export default function PricesPage() {
